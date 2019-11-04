@@ -2,25 +2,11 @@
 import Vue from 'vue'
 //导入 App 组件
 import App from './App'
-//导入 vue router
-import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import router from '@/router'
 
-Vue.use(VueRouter)
 Vue.use(ElementUI)
-
-const routes = [
-{ path: '/home', component: () => import('@/view/Home')},
-{ path: '/about', component: () => import('@/components/About') }
-]
-
-// 创建路由器实例，并且传入`routes`变量作为路由。
-// 你还可以传入别的参数，不过在这里尽量简单化就可以了
-const router = new VueRouter({
-  routes, 
-  mode: 'history'
-})
 
 //实例化Vue实例
 new Vue({

@@ -1,16 +1,15 @@
 <template>
   <div id="app">
-		<router-view>
-			<!--路由管道标签，任何符合某一路由(route)信息的组件都会在这个标签内展示出来 -->
-		</router-view>
-		<div class="tab">
-			<div class="tab-item" @click="clickNav"><router-link :to="'/home'"><i class="el-icon-s-home"></i></router-link></div>
-			<div class="tab-item" @click="clickNav"><router-link :to="'/about'"><i class="el-icon-document-copy"></i></router-link></div>
-		</div>
+		<!-- <router-view>
+		</router-view> -->
+		<Footer></Footer>
   </div>
 </template>
 
 <script>
+
+import Footer from "@/components/footer/Footer.vue"
+
 export default {
   name: 'app',
   data: function () {
@@ -21,11 +20,11 @@ export default {
 	methods:{
 		clickNav: function(event) {
 			var items = $(".tab").children();
-			/* $.each(items, function(i,item){     
-				$(item).removeClass("menuSelected")
-		   }); */
 		   console.log(event.target)
 		}
+	},
+	components: {
+		Footer
 	}
 }
 </script>
